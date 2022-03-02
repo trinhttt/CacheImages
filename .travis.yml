@@ -1,6 +1,4 @@
 os: osx
 osx_image: xcode12.4
 language: swift
-xcode_project: CacheImages.xcodeproj # path to your xcodeproj folder
-xcode_scheme: CacheImagesTests
-xcode_destination: platform=iOS Simulator,OS=14.4,name=iPhone 8
+script: xcodebuild clean build test -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=14.4,name=iPhone 8" ONLY_ACTIVE_ARCH=NO CODE_SINGING_REQUIRED=NO
